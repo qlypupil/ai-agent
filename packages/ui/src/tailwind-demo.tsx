@@ -26,7 +26,7 @@ export function TailwindDemo({ appName }: TailwindDemoProps) {
 					{features.map((feature) => (
 						<div
 							key={feature}
-							className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-100 shadow-sm shadow-black/10"
+							className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-black shadow-sm shadow-black/10"
 						>
 							{feature}
 						</div>
