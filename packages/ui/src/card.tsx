@@ -5,7 +5,7 @@ function Card({ className, ...props }: React.ComponentProps<'div'>) {
 	return (
 		<div
 			className={cn(
-				'rounded-[2rem] border border-white/10 bg-slate-950/45 text-slate-50 shadow-card backdrop-blur',
+				'rounded-4xl border border-white/10 bg-slate-950/45 text-slate-50 shadow-card backdrop-blur',
 				className,
 			)}
 			{...props}
