@@ -12,8 +12,14 @@
 		"./theme.css": "./src/theme.css"
 	},
 	"dependencies": {
+		"@radix-ui/react-label": "catalog:",
+		"@radix-ui/react-separator": "catalog:",
+		"@radix-ui/react-slot": "catalog:",
+		"class-variance-authority": "catalog:",
+		"clsx": "catalog:",
 		"react": "catalog:",
-		"react-dom": "catalog:"
+		"react-dom": "catalog:",
+		"tailwind-merge": "catalog:"
 	},
 	"devDependencies": {
 		"@repo/eslint-config": "workspace:*",
