@@ -6,17 +6,12 @@ import {
   type PingResponse,
 } from '@repo/contracts'
 import { Card, CardContent } from '@repo/ui/card'
-import { hc, type InferResponseType } from 'hono/client'
-import { getWebServerEnv } from '../src/env.server'
-import { WebEnvBadge } from '../src/web-env-badge'
+import { hc } from 'hono/client'
 
+const apiBaseUrl = process.env.API_BASE_URL ?? 'http://127.0.0.1:8787'
 const rpcPayload: PingRequest = { name: 'web' }
 
-type PingRpcResponse = InferResponseType<
-  ReturnType<typeof hc<AppType>>['rpc']['system']['ping']['$post']
->
-
-async function getPingResponse(apiBaseUrl: string): Promise<PingRpcResponse> {
+async function getPingResult() {
   const client = hc<AppType>(apiBaseUrl)
 
   try {
@@ -39,26 +34,13 @@ async function getPingResponse(apiBaseUrl: string): Promise<PingRpcResponse> {
   }
 }
 
-export const dynamic = 'force-dynamic'
-
 export default async function Home() {
-  const env = getWebServerEnv()
-  const pingResult = await getPingResponse(env.API_BASE_URL)
+  const pingResult = await getPingResult()
   const requestBody = JSON.stringify(rpcPayload, null, 2)
   const responseBody = JSON.stringify(pingResult, null, 2)
 
   return (
     <main className="mx-auto flex max-w-250 flex-col gap-8 p-8">
-      <section className="flex flex-wrap items-center gap-3">
-        <span className="rounded-full border border-border-default px-3 py-1 text-xs text-content-tertiary">
-          server {env.APP_ENV}
-        </span>
-        <span className="rounded-full border border-border-default px-3 py-1 text-xs text-content-tertiary">
-          {env.API_BASE_URL}
-        </span>
-        <WebEnvBadge />
-      </section>
-
       <section>
         <Card>
           <CardContent className="grid gap-5 p-6">

@@ -16,6 +16,7 @@
     "@repo/ui": "workspace:*",
     "hono": "^4.12.25",
     "next": "catalog:",
+    "zod": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },
