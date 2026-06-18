@@ -1,17 +1,24 @@
 {
-  "name": "api",
+  "name": "@repo/api",
   "version": "0.1.0",
   "type": "module",
   "private": true,
+  "exports": {
+    ".": "./src/app.ts"
+  },
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@repo/contracts": "workspace:*",
     "hono": "^4.12.25"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260617.1",
+    "typescript": "catalog:",
     "wrangler": "^4.4.0"
   }
 }
