@@ -13,6 +13,7 @@
   "dependencies": {
     "@repo/ui": "workspace:*",
     "next": "catalog:",
+    "zod": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

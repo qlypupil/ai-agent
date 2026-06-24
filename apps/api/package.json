@@ -13,12 +13,14 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.8.0",
     "@repo/contracts": "workspace:*",
     "hono": "^4.12.25"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260617.1",
     "typescript": "catalog:",
-    "wrangler": "^4.4.0"
+    "wrangler": "^4.4.0",
+    "zod": "catalog:"
   }
 }
