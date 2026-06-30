@@ -1,11 +1,11 @@
 import type { PingRequest } from '@repo/contracts'
-import { fetchPing } from '@/src/api/system/ping.api'
+import { postPing } from '@/api/system/ping.api'
 
 export const dynamic = 'force-dynamic'
 
 export default async function PingPage() {
   const payload: PingRequest = { name: 'web' }
-  const result = await fetchPing(payload)
+  const result = await postPing(payload)
   const requestBody = JSON.stringify(payload, null, 2)
   const responseBody = JSON.stringify(result, null, 2)
 

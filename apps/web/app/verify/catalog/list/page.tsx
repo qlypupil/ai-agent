@@ -1,9 +1,9 @@
-import { fetchCatalogList } from '@/src/api/catalog/list.api'
+import { getCatalogList } from '@/api/catalog/list.api'
 
 export const dynamic = 'force-dynamic'
 
 export default async function CatalogListPage() {
-  const result = await fetchCatalogList()
+  const result = await getCatalogList()
   const responseBody = JSON.stringify(result, null, 2)
 
   return (

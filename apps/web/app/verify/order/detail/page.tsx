@@ -1,9 +1,9 @@
-import { fetchOrderDetail } from '@/src/api/order/detail.api'
+import { getOrderDetail } from '@/api/order/detail.api'
 
 export const dynamic = 'force-dynamic'
 
 export default async function OrderDetailPage() {
-  const result = await fetchOrderDetail('123')
+  const result = await getOrderDetail('123')
   const responseBody = JSON.stringify(result, null, 2)
 
   return (

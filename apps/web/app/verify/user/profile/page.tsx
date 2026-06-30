@@ -1,9 +1,9 @@
-import { fetchUserProfile } from '@/src/api/user/profile.api'
+import { getUserProfile } from '@/api/user/profile.api'
 
 export const dynamic = 'force-dynamic'
 
 export default async function UserProfilePage() {
-  const result = await fetchUserProfile()
+  const result = await getUserProfile()
   const responseBody = JSON.stringify(result, null, 2)
 
   return (

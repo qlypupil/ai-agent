@@ -1,9 +1,9 @@
-import { fetchHealth } from '@/src/api/system/health.api'
+import { getHealth } from '@/api/system/health.api'
 
 export const dynamic = 'force-dynamic'
 
 export default async function HealthPage() {
-  const result = await fetchHealth()
+  const result = await getHealth()
   const responseBody = JSON.stringify(result, null, 2)
 
   return (

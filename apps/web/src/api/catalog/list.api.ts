@@ -1,21 +1,6 @@
-import type { ApiResponse, CatalogListResponse } from '@repo/contracts'
-import { serverURL } from '../utils'
+import type { CatalogListResponse } from '@repo/contracts'
+import { http } from '@/http'
 
-export async function fetchCatalogList(): Promise<ApiResponse<CatalogListResponse>> {
-  try {
-    const response = await fetch(serverURL('/rpc/catalog'))
-    return await response.json()
-  } catch (error) {
-    return {
-      ok: false,
-      error: {
-        code: 'SYSTEM.UPSTREAM_TIMEOUT' as const,
-        message: error instanceof Error ? error.message : 'API request failed',
-      },
-      meta: {
-        requestId: 'unavailable',
-        timestamp: new Date().toISOString(),
-      },
-    }
-  }
+export function getCatalogList() {
+  return http.get<CatalogListResponse>('/rpc/catalog')
 }
