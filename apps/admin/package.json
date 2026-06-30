@@ -14,9 +14,10 @@
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "catalog:",
     "next": "catalog:",
-    "zod": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "uuidv7": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

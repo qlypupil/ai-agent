@@ -24,6 +24,7 @@ catalog:
   tailwind-merge: ^3.6.0
   tailwindcss: 4.3.0
   typescript: 5.9.2
+  uuidv7: ^1.2.1
   zod: ^4.4.3
 
 minimumReleaseAgeExclude:
