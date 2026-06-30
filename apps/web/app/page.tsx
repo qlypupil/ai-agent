@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ClientPingDemo } from '@/client-api/system/client-ping-demo'
 
 const links = [
   '/verify/system/health',
@@ -28,6 +29,10 @@ export default function Home() {
           </li>
         ))}
       </ul>
+
+      <hr className="my-8 border-border-default" />
+
+      <ClientPingDemo />
     </main>
   )
 }

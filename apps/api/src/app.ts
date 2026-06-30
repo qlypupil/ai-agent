@@ -1,5 +1,6 @@
 import { BizCode, buildFailure } from '@repo/contracts'
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 import { HTTPException } from 'hono/http-exception'
 import { createMeta } from './lib/utils'
 import routes from './routes'
@@ -22,6 +23,8 @@ class AppError extends Error {
 }
 
 const app = new Hono<{ Bindings: Bindings }>()
+
+app.use('*', cors())
 
 app.onError((error, c) => {
 	const meta = createMeta()

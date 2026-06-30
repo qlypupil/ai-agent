@@ -10,6 +10,7 @@ export {
 } from './common/response'
 export { CatalogListResponseSchema, type CatalogListResponse } from './catalog/list.contract'
 export { OrderDetailResponseSchema, type OrderDetailResponse } from './order/detail.contract'
+export { HealthResponseSchema, type HealthResponse } from './system/health.contract'
 export {
   PingRequestSchema,
   PingResponseSchema,
